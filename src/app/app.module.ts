@@ -5,22 +5,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarteComponent } from './carte/carte.component';
 import {RouterModule, Routes} from '@angular/router';
+import { BtnComponent } from './btn/btn.component';
+
+// Import HttpClientModule from @angular/common/http
+import {HttpClientModule} from '@angular/common/http';
+
+
+
+
 
 const appRoutes: Routes = [
-  { path: 'carte', component: CarteComponent}
+  { path: 'carte', component: CarteComponent},
+  { path: '', component: BtnComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarteComponent
+    CarteComponent,
+    BtnComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-      RouterModule.forRoot(
-          appRoutes,
-          { enableTracing: true })
+      RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

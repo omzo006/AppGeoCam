@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-declare let L;
+import { HttpClient } from '@angular/common/http';
+import * as L from 'leaflet';
+
 
 @Component({
   selector: 'app-carte',
@@ -8,7 +10,7 @@ declare let L;
 })
 export class CarteComponent implements OnInit {
 
-  constructor() {
+  constructor(private http: HttpClient) {
 
   }
 
@@ -25,7 +27,14 @@ export class CarteComponent implements OnInit {
     const myIcon = L.icon({
       iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/images/marker-icon.png'
     });
-    L.marker([14.69686602, -17.47185787], {icon: myIcon}).bindPopup('Je suis un camera de surveillance ').addTo(map).openPopup();
+    // pour ajouter plusieurs marker a partir de l'API
+    this.http.get('').subscribe((data: any) => {
+      data.records.forEach(podotactile => {
+        L.marker([podotactile.geometry.coordinates[1], podotactile.geometry.coordinates[0]], {icon: myIcon}).addTo(map);
+      });
+    });
+    // //pour ajouter un marker
+    // L.marker([14.69686602, -17.47185787], {icon: myIcon}).bindPopup('Je suis un camera de surveillance ').addTo(map).openPopup();
 
 
     L.Routing.control({
