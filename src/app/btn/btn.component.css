@@ -7,19 +7,25 @@ body {
     align-items:center;
     justify-content:center;
     font-family:Helvetica,Sans-serif;
+    overflow: hidden;
 }
 #myvideo{
     position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 150%;
-    height: 100%;
+   top: 0;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    left: 0;
+    /*background-color: black;*/
+    opacity: 0.5;
+    z-index: 0;
 }
 a {
     text-decoration:none;
     color:#FFF;
 }
 .rainbow-button {
+    position: relative;
     width:calc(20vw + 6px);
     height:calc(8vw + 6px);
     background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
