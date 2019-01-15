@@ -7,7 +7,7 @@ body {
     align-items:center;
     justify-content:center;
     font-family:Helvetica,Sans-serif;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 #myvideo{
     position: absolute;
