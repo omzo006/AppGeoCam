@@ -23,11 +23,12 @@ export class CarteComponent implements OnInit {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+
     function onLocationFound(e) {
-      const radius = e.accuracy / 2;
+      const radius = e.accuracy / 5;
 
       L.marker(e.latlng).addTo(map)
-          .bindPopup("\n" + " Vous êtes à moins de " + radius + " mètres de ce point").openPopup();
+          .bindPopup("\n" + " Vous êtes à moins de " + radius + " mètres de ce point" ).openPopup();
 
       L.circle(e.latlng, radius).addTo(map);
     }
@@ -40,10 +41,10 @@ export class CarteComponent implements OnInit {
     map.on('locationerror', onLocationError);
 
     map.locate({setView: true, maxZoom: 16});
-    // const marker = L.marker([51.5, -0.09]).addTo(mymap);
+
 
     const myIcon = L.icon({
-      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/images/marker-icon.png'
+      iconUrl: 'http://iconshow.me/media/images/Application/Map-Markers-icons/png/48/MapMarker_Marker_Outside_Pink.png'
     });
 
     // pour ajouter plusieurs marker a partir de l'API
@@ -52,24 +53,23 @@ export class CarteComponent implements OnInit {
     //     L.marker([podotactile.geometry.coordinates[1], podotactile.geometry.coordinates[0]], {icon: myIcon}).addTo(map);
     //   });
     // });
-    // //pour ajouter un marker
-     L.marker([14.69686602, -17.47185787], {icon: myIcon}).bindPopup('Je suis un camera de surveillance ').addTo(map).openPopup();
-    L.marker([14.69686602, -17.47185787], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.69182379, -17.47420119], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.68882162, -17.47285495], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.68553263, -17.46917817], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.67791396, -17.46751698], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.67736926, -17.46393494], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.67772, -17.45823], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.68023898, -17.45541603], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.67586, -17.45386], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.67661799, -17.45155789], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.67430465, -17.44905546], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.67335048, -17.4501742], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.67126346, -17.44658193], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.67060589, -17.4449014], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.66984511, -17.44327073], {icon: myIcon}).addTo(map).openPopup();
-    L.marker([14.66740539, -17.44307767], {icon: myIcon}).addTo(map).openPopup();
+    // //pour ajouter un markerL.marker([14.69686602, -17.47185787], {icon: myIcon}).bindPopup('Je suis un camera de surveillance ').addTo(map).openPopup();
+     L.marker([14.69686602, -17.47185787], {icon: myIcon}).addTo(map);
+    L.marker([14.69182379, -17.47420119], {icon: myIcon}).addTo(map);
+    L.marker([14.68882162, -17.47285495], {icon: myIcon}).addTo(map);
+    L.marker([14.68553263, -17.46917817], {icon: myIcon}).addTo(map);
+    L.marker([14.67791396, -17.46751698], {icon: myIcon}).addTo(map);
+    L.marker([14.67736926, -17.46393494], {icon: myIcon}).addTo(map);
+    L.marker([14.67772, -17.45823], {icon: myIcon}).addTo(map);
+    L.marker([14.68023898, -17.45541603], {icon: myIcon}).addTo(map);
+    L.marker([14.67586, -17.45386], {icon: myIcon}).addTo(map);
+    L.marker([14.67661799, -17.45155789], {icon: myIcon}).addTo(map);
+    L.marker([14.67430465, -17.44905546], {icon: myIcon}).addTo(map);
+    L.marker([14.67335048, -17.4501742], {icon: myIcon}).addTo(map);
+    L.marker([14.67126346, -17.44658193], {icon: myIcon}).addTo(map);
+    L.marker([14.67060589, -17.4449014], {icon: myIcon}).addTo(map);
+    L.marker([14.66984511, -17.44327073], {icon: myIcon}).addTo(map);
+    L.marker([14.66740539, -17.44307767], {icon: myIcon}).addTo(map);
     L.marker([14.6671642, -17.44165497], {icon: myIcon}).addTo(map).openPopup();
     L.marker([14.66676073, -17.44045358], {icon: myIcon}).addTo(map).openPopup();
     L.marker([14.66552, -17.4368], {icon: myIcon}).addTo(map).openPopup();
@@ -119,5 +119,4 @@ export class CarteComponent implements OnInit {
       ]
     }).addTo(map);
   }
-
 }
