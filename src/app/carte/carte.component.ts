@@ -24,24 +24,32 @@ export class CarteComponent implements OnInit {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    function onLocationFound(e) {
-      const radius = e.accuracy / 5;
-
-      L.marker(e.latlng).addTo(map)
-          .bindPopup("\n" + " Vous êtes à moins de " + radius + " mètres de ce point" ).openPopup();
-
-      L.circle(e.latlng, radius).addTo(map);
-    }
-
-    function onLocationError(e) {
-      alert(e.message);
-    }
-
-    map.on('locationfound', onLocationFound);
-    map.on('locationerror', onLocationError);
-
-    map.locate({setView: true, maxZoom: 16});
-
+    // function onLocationFound(e) {
+    //   const radius = e.accuracy / 5;
+    //
+    //   L.marker(e.latlng).addTo(map)
+    //       .bindPopup("\n" + " Vous êtes à moins de " + radius + " mètres de ce point" ).openPopup();
+    //
+    //   L.circle(e.latlng, radius).addTo(map);
+    // }
+    //
+    // function onLocationError(e) {
+    //   alert(e.message);
+    // }
+    //
+    // map.on('locationfound', onLocationFound);
+    // map.on('locationerror', onLocationError);
+    //
+    // map.locate({setView: true, maxZoom: 16});
+    // function currentLocation() {
+    //   if (navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition((function (position) {
+    //       L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+    //     }));
+    //   } else {
+    //     alert("La géolocalisation n'est pas supportée par ce navigateur.");
+    //   }
+    // }
 
     const myIcon = L.icon({
       iconUrl: 'http://iconshow.me/media/images/Application/Map-Markers-icons/png/48/MapMarker_Marker_Outside_Pink.png'
@@ -54,7 +62,7 @@ export class CarteComponent implements OnInit {
     //   });
     // });
     // //pour ajouter un markerL.marker([14.69686602, -17.47185787], {icon: myIcon}).bindPopup('Je suis un camera de surveillance ').addTo(map).openPopup();
-     L.marker([14.69686602, -17.47185787], {icon: myIcon}).addTo(map);
+    L.marker([14.69686602, -17.47185787], {icon: myIcon}).addTo(map);
     L.marker([14.69182379, -17.47420119], {icon: myIcon}).addTo(map);
     L.marker([14.68882162, -17.47285495], {icon: myIcon}).addTo(map);
     L.marker([14.68553263, -17.46917817], {icon: myIcon}).addTo(map);
@@ -110,6 +118,50 @@ export class CarteComponent implements OnInit {
     L.marker([14.6741014, -17.44241776], {icon: myIcon}).addTo(map);
     L.marker([14.67269054, -17.44175938], {icon: myIcon}).addTo(map);
     L.marker([14.67607308, -17.43985445], {icon: myIcon}).addTo(map);
+    L.marker([14.6794825, -17.44290697], {icon: myIcon}).addTo(map);
+    L.marker([14.67952667, -17.44334731], {icon: myIcon}).addTo(map);
+    L.marker([14.68323505, -17.44436751], {icon: myIcon}).addTo(map);
+    L.marker([14.68757923, -17.44592178], {icon: myIcon}).addTo(map);
+    L.marker([14.69055682, -17.44691316], {icon: myIcon}).addTo(map);
+    L.marker([14.69263318, -17.44786979], {icon: myIcon}).addTo(map);
+    L.marker([14.70418579, -17.45168485], {icon: myIcon}).addTo(map);
+    L.marker([14.70733449, -17.46009926], {icon: myIcon}).addTo(map);
+    L.marker([14.69485608, -17.46357017], {icon: myIcon}).addTo(map);
+    L.marker([14.7070649, -17.46015059], {icon: myIcon}).addTo(map);
+    L.marker([14.7093702, -17.458066], {icon: myIcon}).addTo(map);
+    L.marker([14.71291, -17.45489], {icon: myIcon}).addTo(map);
+    L.marker([14.67310501, -17.43195843], {icon: myIcon}).addTo(map);
+    L.marker([14.66976062, -17.42729532], {icon: myIcon}).addTo(map);
+    L.marker([14.66247818, -17.43426629], {icon: myIcon}).addTo(map);
+    L.marker([14.66251902, -17.43448391], {icon: myIcon}).addTo(map);
+    L.marker([14.66286501, -17.43713777], {icon: myIcon}).addTo(map);
+    L.marker([14.6630799, -17.43769548], {icon: myIcon}).addTo(map);
+    L.marker([14.7056403, -17.45870133], {icon: myIcon}).addTo(map);
+    L.marker([14.70528269, -17.48255554], {icon: myIcon}).addTo(map);
+    L.marker([14.70945327, -17.48677321], {icon: myIcon}).addTo(map);
+    L.marker([14.71675704, -17.4899791], {icon: myIcon}).addTo(map);
+    L.marker([14.717182619999999, -17.49185778], {icon: myIcon}).addTo(map);
+    L.marker([14.71942837, -17.49255375], {icon: myIcon}).addTo(map);
+    L.marker([14.72395656, -17.4950842], {icon: myIcon}).addTo(map);
+    L.marker([14.72622751, -17.50065448], {icon: myIcon}).addTo(map);
+    L.marker([14.73256073, -17.5084852], {icon: myIcon}).addTo(map);
+    L.marker([14.73662181, -17.50911521], {icon: myIcon}).addTo(map);
+    L.marker([14.74359199, -17.51200665], {icon: myIcon}).addTo(map);
+    L.marker([14.74790695, -17.50823398], {icon: myIcon}).addTo(map);
+    L.marker([14.75146251, -17.50181517], {icon: myIcon}).addTo(map);
+    L.marker([14.75362384, -17.49400203], {icon: myIcon}).addTo(map);
+    L.marker([14.74734563, -17.49023878], {icon: myIcon}).addTo(map);
+    L.marker([14.74678544, -17.49121238], {icon: myIcon}).addTo(map);
+    L.marker([14.728961, -17.45740553], {icon: myIcon}).addTo(map);
+    L.marker([14.72849829, -17.4573057], {icon: myIcon}).addTo(map);
+    L.marker([14.72803434, -17.45229363], {icon: myIcon}).addTo(map);
+    L.marker([14.72721375, -17.4464455], {icon: myIcon}).addTo(map);
+    L.marker([14.72671528, -17.44421654], {icon: myIcon}).addTo(map);
+    L.marker([14.72116901, -17.44762086], {icon: myIcon}).addTo(map);
+    L.marker([14.71803883, -17.45040339], {icon: myIcon}).addTo(map);
+    L.marker([14.72320346, -17.45794682], {icon: myIcon}).addTo(map);
+    L.marker([14.72309865, -17.45824433], {icon: myIcon}).addTo(map);
+    L.marker([14.69827548, -17.44390285], {icon: myIcon}).addTo(map);
 
 
     L.Routing.control({
